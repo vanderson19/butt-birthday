@@ -7,14 +7,14 @@
 </head>
 
 <body>
-<?php
+<!-- <?php
 $bdayErr="";
 $month=$day=$year="";
 if (empty($_GET["month"]) or empty($_GET["day"]) or empty($_GET["year"])){
   $bdayErr="Please enter birthday"
 } else{
   $bday=validate($_GET["month"], $_GET["day"], $_GET["year"])
-  if (!(is_numeric($month) and is_numeric($day) and is_numeric($year))) {
+  if (!(is_numeric($month) && is_numeric($day) && is_numeric($year))) {
     $bdayErr="Please enter numbers only"
   }
 }
@@ -28,15 +28,13 @@ function validate($m, $d, $y){
     $bdayErr="That is not a valid date"
   }
 }
-?>
+?> -->
 
 <h1>Butt Birthday</h1>
 <h4>Enter your birthday in the form mm/dd/yyyy:</h4>
 
-<form  method="get" action="results.html">
-<input type="text" name="m" maxlength="2" size="2"> / <input type="text" name="d" maxlength="2" size="2"> / <input type="text" name="y" maxlength="4" size="4"> <span class="error"><?php echo $bdayErr;?></span>
-<input type="submit" value="Go!">
-</form>
+<input type="text" id="m" maxlength="2" size="2" required> / <input type="text" id="d" maxlength="2" size="2" required> / <input type="text" id="y" maxlength="4" size="4" required> <p id="error"></p>
+<button type="button" onclick="validate()">I'm ready to be enlightened</button>
 
 <p>Anuses are among the first structures to form in humans at around
 8 weeks of development. Humans are born about 40 weeks after conception. I'm sure
@@ -48,12 +46,27 @@ and family's butts!</p>
 <button onclick="credits()">Credits</button>
 
 <script>
+function validate(){
+  err=""
+  m=document.getElementById("m").value;
+  d=document.getElementById("d").value;
+  y=document.getElementById("y").value;
+  if (isNaN(m) || isNaN(d) || isNaN(y)){
+    err="Those aren't numbers, silly!"
+  }
+  else if (m<1 || m>12 || d<1 || d>31){
+    err="That's not a valid date, silly!"
+  }
+  else {
+    location.href='https://vanderson19.github.io/butt-birthday/results.html'
+  }
+  document.getElementById("error").innerHTML = err;
+}
+
 function credits(){
-  location.href='https://vanderson19.github.io/butt-birthday/credits.html'
+ location.href='https://vanderson19.github.io/butt-birthday/credits.html'
 }
-function results(){
-//go to results page
-}
+
 </script>
 
 </body>
