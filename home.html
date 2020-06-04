@@ -33,8 +33,10 @@ function validate($m, $d, $y){
 <h1>Butt Birthday</h1>
 <h4>Enter your birthday in the form mm/dd/yyyy:</h4>
 
+<form id="input" action="results.html" method="get">
 <input type="text" id="m" maxlength="2" size="2" required> / <input type="text" id="d" maxlength="2" size="2" required> / <input type="text" id="y" maxlength="4" size="4" required> <p id="error"></p>
 <button type="button" onclick="validate()">I'm ready to be enlightened</button>
+</form>
 
 <p>Anuses are among the first structures to form in humans at around
 8 weeks of development. Humans are born about 40 weeks after conception. I'm sure
@@ -52,19 +54,19 @@ function validate(){
   d=document.getElementById("d").value;
   y=document.getElementById("y").value;
   if (isNaN(m) || isNaN(d) || isNaN(y)){
-    err="Those aren't numbers, silly!"
+    err="Those aren't numbers, silly!";
   }
   else if (m<1 || m>12 || d<1 || d>31){
-    err="That's not a valid date, silly!"
+    err="That's not a valid date, silly!";
   }
   else {
-    location.href='https://vanderson19.github.io/butt-birthday/results.html'
+      document.getElementById("input").submit();
   }
   document.getElementById("error").innerHTML = err;
 }
 
 function credits(){
- location.href='https://vanderson19.github.io/butt-birthday/credits.html'
+ location.href='https://vanderson19.github.io/butt-birthday/credits.html';
 }
 
 </script>
