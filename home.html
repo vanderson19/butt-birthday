@@ -33,7 +33,7 @@ function validate($m, $d, $y){
 <h1>Butt Birthday</h1>
 <h4>Enter your birthday in the form mm/dd/yyyy:</h4>
 
-<form  method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form  method="get" action="results.html">
 <input type="text" name="m" maxlength="2" size="2"> / <input type="text" name="d" maxlength="2" size="2"> / <input type="text" name="y" maxlength="4" size="4"> <span class="error"><?php echo $bdayErr;?></span>
 <input type="submit" value="Go!">
 </form>
