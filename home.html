@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,34 +10,12 @@
 </head>
 
 <body>
-<!-- <?php
-$bdayErr="";
-$month=$day=$year="";
-if (empty($_GET["month"]) or empty($_GET["day"]) or empty($_GET["year"])){
-  $bdayErr="Please enter birthday"
-} else{
-  $bday=validate($_GET["month"], $_GET["day"], $_GET["year"])
-  if (!(is_numeric($month) && is_numeric($day) && is_numeric($year))) {
-    $bdayErr="Please enter numbers only"
-  }
-}
-
-function validate($m, $d, $y){
-  $date=mktime(00,00,00,$m,$d,$y)
-  if (checkdate($date){
-    return $date
-  }
-  else{
-    $bdayErr="That is not a valid date"
-  }
-}
-?> -->
 
 <h1>Butt Birthday</h1>
 <h4>Enter your birthday in the form mm/dd/yyyy:</h4>
 
-<form id="input" action="/butt-birthday/results.php" method="get">
-<input type="text" id="m" maxlength="2" size="2" required> / <input type="text" id="d" maxlength="2" size="2" required> / <input type="text" id="y" maxlength="4" size="4" required> <p id="error"></p>
+<form id="input" action="results.php" method="get">
+<input type="text" id="m" name="m" maxlength="2" size="2" required> / <input type="text" id="d" name="d" maxlength="2" size="2" required> / <input type="text" id="y" name "y" maxlength="4" size="4" required> <p id="error"></p>
 <button type="button" onclick="validate()">I'm ready to be enlightened</button>
 </form>
 
@@ -55,6 +36,9 @@ function validate(){
   y=document.getElementById("y").value;
   if (isNaN(m) || isNaN(d) || isNaN(y)){
     err="Those aren't numbers, silly!";
+  }
+  else if (y.toString().length < 4){
+    err="That's not a four-digit year, silly! (Pls add all preceding 0's if you're immortal and from the 100s or 10s)";
   }
   else if (m<1 || m>12 || d<1 || d>31){
     err="That's not a valid date, silly!";
