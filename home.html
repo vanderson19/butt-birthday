@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 
@@ -38,7 +35,7 @@ function validate(){
     err="Those aren't numbers, silly!";
   }
   else if (y.toString().length < 4){
-    err="That's not a four-digit year, silly! (Pls add all preceding 0's if you're immortal and from the 100s or 10s)";
+    err="That's not a four-digit year, silly! (Pls add all preceding 0's if you're immortal or from the 100s or 10s)";
   }
   else if (m<1 || m>12 || d<1 || d>31){
     err="That's not a valid date, silly!";
