@@ -39,10 +39,71 @@ function validate(){
     err="That's not a four-digit year, silly! (Pls add all preceding 0's if you're immortal or from the 100s or 10s)";
   }
   else {
-    results="Birthday: "+m+" / "+d+" / "+y+"<br>Your fanny felicitations date is: "+"<br>This makes your heinie "+" years old.<br>Your booty shares its formation day with "+"'s posterior.<br>Astrological sign: "+"<br>Your tush is "+"<br>Gemstone: "+"<br>Your caboose will likely be a "+"<br>"
-    document.getElementById("text").innerHTML = results;
+    success();
   }
   document.getElementById("error").innerHTML = err;
+}
+
+function success(){
+  //birthdate and butt birthdate
+  var b=new Date(y, m-1, d);
+  var bb=new Date(y, m-1, d);
+  bb.setDate(b.getDate()-224);
+  var bbdayStr=bb.getMonth()+" / "+bb.getDate()+" / "+bb.getFullYear();
+
+  //age calculation
+  var today=new Date();
+  var diff=Math.abs(today - bb)/(1000*60*60*24*365.25);
+  var age=Math.round(diff*10)/10;
+
+  //celeb list
+  var jan=new Array(["Paul Revere", "Betsy Ross"], ["Renee Elise Goldsberry", "Dax Shepard"],  ["Greta Thunberg","Mel Gibson"], ["Isaac Newton","Charles Melton"], ["Bradley Cooper","Marilyn Manson"], ["Rowan Atkinson","Eddie Redmayne"], ["Nicolas Cage","Jeremy Renner"], ["Elvis Presley","Stephen Hawking"], ["Kate Middleton","Richard Nixon"], ["Ajit Pai","Rod Stewart"], ["Mary J. Blige","Alexander Hamilton"], ["Zayn Malik","Jeff Bezos"], ["Liam Hemsworth","Natalia Dyer"], ["Dan Schneider","Jason Bateman"], ["Martin Luther King Jr.","Pitbull", "Dove Cameron"], ["Lin Manuel Miranda","Jennie Kim"], ["Jake Paul","Michelle Obama", "Jim Carrey", "Betty White", "Steve Harvey", "Calvin Harris", "Muhammad Ali"], ["Karan Brar","Eugene Lee Yang"], ["Mac Miller","Dolly Parton"], ["Rainn Wilson","Buzz Aldrin"], ["Alex from Target","Booboo Stewart"], ["Logic","Guy Fieri"], ["Hey Vsauce, Michael here","John Hancock"], ["Daveed Diggs","Neil Diamond"], ["Alicia Keys","Lil Mosey"], ["Ellen DeGeneres","Colin O'Donoghue"], ["Wolfgang Mozart","Patton Oswalt"], ["Ariel Winter","Elijah Wood"], ["Oprah Winfrey","Harriet Tubman"], ["Christian Bale","Franklin D. Roosevelt", "BENEE"], ["Justin Timberlake","Jackie Robinson"]);
+  var feb=new Array(["Harry Styles", "Ronda Rousey"], ["Shakira"],  ["Sean Kingston","Daddy Yankee", "Warwick Davis", "Ferdinand Magellan"], ["Zach King","Rosa Parks", "Hannah Stocking"], ["Cristiano Ronaldo","Henry Golding"], ["Bob Marley","Babe Ruth", "Ronald Reagan", "Rick Astley"], ["Jacksepticeye","Gabbie Hanna", "Ashton Kutcher", "Bea Miller", "Chris Rock"], ["James Dean","John Williams", "Cecily Strong", "Klay Thompson"], ["Michael B. Jordan","Tom Hiddleston"], ["CalebCity","Emma Roberts"], ["Jennifer Aniston","Taylor Lautner", "Khalid", "Thomas Edison", "Alex Jones"], ["Abraham Lincoln","Gucci Mane"], ["Sophia Lillis","Jerry Springer"], ["Tati Westbrook","Ferderick Douglass", "Simon Pegg", "Michael Bloomberg"], ["Megan Thee Stallion","Galileo Galilei", "Susan B. Anthony"], ["Weeknd","Ava Max", "Elizabeth Olsen", "Ice T"], ["Michael Jordan","Ed Sheeran", "Paris Hilton", "Bonnie Wright", "Joseph Gordon-Levitt"], ["JHope","John Travolta", "Dr. Dre"], ["Millie Bobby Brown","Victoria Justice"], ["Rihanna","Kurt Cobain", "ExplodingTNT", "Cindy Crawford", "Trevor Noah"], ["Sophie Turner","Alan Rickman", "Corbin Bleu", "Jordan Peele"], ["George Washington","Steve Irwin", "Lea Salonga"], ["Dakota Fanning","Emily Blunt", "Josh Gad"], ["Steve Jobs","Floyd Mayweather"], ["George Harrison","Jameela Jamil"], ["Johnny Cash","Michael Bolton"], ["James Perry","John Steinbeck"], ["Rudy Mancuso"], ["Ja Rule"]);
+  var mar=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var apr=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var may=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var jun=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var jul=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var aug=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var sep=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var oct=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var nov=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var dec=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var celebs=new Array(jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec);
+  var randCeleb=randomElem(celebs[b.getMonth()][b.getDate()-1], []);
+
+  //gemstone
+  var gemstones= new Array("Garnet", "Amethyst", "Bloodstone", "Diamond", "Emerald", "Agate", "Ruby", "Sardonyx", "Sapphire", "Opal", "Topaz", "Turquoise");
+
+  //adjs
+  var janP=new Array("talkative", "smart", "popular", "courageous", "resilient", "authentic", "unpredictable");
+  var febP=new Array("free-spirited", "an abstract thinker", "intelligent", "amicable", "ambitious", "successful");
+  var marP=new Array("attractive", "charismatic", "charming", "passionate", "popular", "attention-lover");
+  var aprP=new Array("charming", "adorable", "bubbly", "funny", "cheerful", "intelligent", "confident", "graceful", "lively");
+  var mayP=new Array("soothing", "motiational", "caring", "emotional", "helpful", "diplomatic");
+  var junP=new Array("perfectionist", "honorable", "mysterious", "equitable", "efficient", "impatient");
+  var julP=new Array("flirty", "wicked", "proud", "a playboy", "vivacious");
+  var augP=new Array("creative", "outgoing", "playful", "an attention-lover", "distracted");
+  var sepP=new Array("practical", "decisive", "moral", "reliable", "gentle", "caring", "booty-ful");
+  var octP=new Array("passionate", "intense", "secretive", "desired", "loved");
+  var novP=new Array("diligent", "adventurous", "strong-willed", "adventurous", "curious", "hard-working", "booty-ful");
+  var decP=new Array("booty-ful", "flamboyant", "serene", "deep");
+  var personality=new Array(janP, febP, marP, aprP, mayP, junP, julP, augP, sepP, octP, novP, decP);
+  var first=randomElem(personality[bb.getMonth()-1], []);
+  var second=randomElem(personality[bb.getMonth()-1], [first]);
+  var third=randomElem(personality[bb.getMonth()-1], [first, second]);
+
+  //results output
+  results="Your butt birthday is: "+bbdayStr+"<br>This makes your heinie "+age+" years old.<br>Your booty shares its formation day with "+randCeleb+"'s posterior.<br>Your tush is "+first+", "+second+", "+third+"<br>Gemstone: "+gemstones[bb.getMonth()]+"<br>Your caboose will likely be a "+"<br>";
+  document.getElementById("text").innerHTML = results;
+}
+
+function randomElem(lst, except){
+  n=Math.floor(Math.random()*lst.length);
+  while (except.indexOf(lst[n])>=0){
+    n=Math.floor(Math.random()*lst.length);
+  }
+  return lst[n];
 }
 
 function credits(){
