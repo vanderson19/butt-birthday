@@ -12,7 +12,7 @@
 <h4>Enter your birthday in the form mm/dd/yyyy:</h4>
 
 <form id="input" action="<? =$_SERVER['PHP_SELF'];?>" method="get">
-<input type="text" id="m" name="m" maxlength="2" size="2" required> / <input type="text" id="d" name="d" maxlength="2" size="2" required> / <input type="text" id="y" name "y" maxlength="4" size="4" required> <p id="error"></p>
+<input type="text" id="m" name="m" maxlength="2" size="2" required> / <input type="text" id="d" name="d" maxlength="2" size="2" required> / <input type="text" id="y" name="y" maxlength="4" size="4" required> <p id="error"></p>
 <button type="button" onclick="validate()">I'm ready to be enlightened</button>
 </form>
 
@@ -23,12 +23,6 @@ We at Butt Birthday have made that passing wonder into a fully functional
 tool available to the public! Enter your birthday above and determine the date
 of anus perforation so you can celebrate this joyous occasion with your friends'
 and family's butts! </p>
-  
-  <?php
-$m=$_GET["m"];
-echo $m;
-?>
-  
 <button onclick="credits()">Credits</button>
 
 <script>
@@ -58,5 +52,11 @@ function credits(){
 
 </script>
 
+<?php
+echo "<h3>yes</h3>";
+$m=$_GET["m"];
+echo $m;
+?>
+  
 </body>
 </html>
