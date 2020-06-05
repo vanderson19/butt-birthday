@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <title>Butt Birthday</title>
 <style></style>
 </head>
 
 <body>
-
 <h1>Butt Birthday</h1>
 <h4>Enter your birthday in the form mm/dd/yyyy:</h4>
 
-<form id="input" action="<? =$_SERVER['PHP_SELF'];?>" method="get">
-<input type="text" id="m" name="m" maxlength="2" size="2" required> / <input type="text" id="d" name="d" maxlength="2" size="2" required> / <input type="text" id="y" name="y" maxlength="4" size="4" required> <p id="error"></p>
-<button type="button" onclick="validate()">I'm ready to be enlightened</button>
-</form>
+<input type="text" id="m" name="m" maxlength="2" size="2" required> / <input type="text" id="d" name="d" maxlength="2" size="2" required> /
+<input type="text" id="y" name="y" maxlength="4" size="4" required> <p id="error"></p>
 
-<p>Anuses are among the first structures to form in humans at around
+<button type="button" onclick="validate()">I'm ready to be enlightened</button>
+
+<p id="text">Anuses are among the first structures to form in humans at around
 8 weeks of development. Humans are born about 40 weeks after conception. I'm sure
 you're wondering at this point <i>Boy, I wonder what day my butthole was formed...</i>
 We at Butt Birthday have made that passing wonder into a fully functional
 tool available to the public! Enter your birthday above and determine the date
 of anus perforation so you can celebrate this joyous occasion with your friends'
-and family's butts! </p>
+and family's butts!</p>
 <button onclick="credits()">Credits</button>
 
 <script>
@@ -34,14 +32,15 @@ function validate(){
   if (isNaN(m) || isNaN(d) || isNaN(y)){
     err="Those aren't numbers, silly!";
   }
-  else if (y.toString().length < 4){
-    err="That's not a four-digit year, silly! (Pls add all preceding 0's if you're immortal or from the 100s or 10s)";
-  }
   else if (m<1 || m>12 || d<1 || d>31){
     err="That's not a valid date, silly!";
   }
+  else if (y.toString().length < 4){
+    err="That's not a four-digit year, silly! (Pls add all preceding 0's if you're immortal or from the 100s or 10s)";
+  }
   else {
-      document.getElementById("input").submit();
+    results="<b>Birthday: "+m+" / "+d+" / "+y+"</b>"
+        document.getElementById("text").innerHTML = results;
   }
   document.getElementById("error").innerHTML = err;
 }
@@ -52,11 +51,5 @@ function credits(){
 
 </script>
 
-<?php
-echo "<h3>yes</h3>";
-$m=$_GET["m"];
-echo $m;
-?>
-  
 </body>
 </html>
