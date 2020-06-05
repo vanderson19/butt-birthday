@@ -80,7 +80,7 @@ function success(){
   var febP=new Array("free-spirited", "an abstract thinker", "intelligent", "amicable", "ambitious", "successful");
   var marP=new Array("attractive", "charismatic", "charming", "passionate", "popular", "attention-lover");
   var aprP=new Array("charming", "adorable", "bubbly", "funny", "cheerful", "intelligent", "confident", "graceful", "lively");
-  var mayP=new Array("soothing", "motiational", "caring", "emotional", "helpful", "diplomatic");
+  var mayP=new Array("soothing", "motivational", "caring", "emotional", "helpful", "diplomatic");
   var junP=new Array("perfectionist", "honorable", "mysterious", "equitable", "efficient", "impatient");
   var julP=new Array("flirty", "wicked", "proud", "a playboy", "vivacious");
   var augP=new Array("creative", "outgoing", "playful", "an attention-lover", "distracted");
@@ -94,25 +94,25 @@ function success(){
   var third=randomElem(personality[bb.getMonth()], [first, second]);
 
   //careers
-  var janC=new Array("a general practitioner; nice to meet you Dr. Gluteus Maximus", "a debt collector");
-  var febC=new Array("an artist", "a traffic cop; you must have been good at red light, green light");
-  var marC=new Array("an artist", "a musician; toot out a tune for us!", "pilot");
-  var aprC=new Array("a dictator...um...I'm sorry");
-  var mayC=new Array("a politician");
-  var junC=new Array("a CEO", "a Nobel Prize Winner; congrats!");
-  var julC=new Array("a bricklayer", "an artist", "a train driver; your caboose is ready to take charge", "a wizard; that booty really do be magical");
-  var augC=new Array("a bricklayer", "President of the United States; I hope you'll remember me at your inauguration!");
-  var sepC=new Array("a genius test-taker", "a professor", "an athlete");
-  var octC=new Array("a politician");
-  var novC=new Array("a serial killer; come on, you gotta stop killin the haters with your swag");
-  var decC=new Array("a dentist", "a messiah, either religious or secular");
+  var janC=new Array("a general practitioner; nice to meet you Dr. Gluteus Maximus.", "a debt collector.");
+  var febC=new Array("an artist.", "a traffic cop; you must have been good at red light, green light.");
+  var marC=new Array("an artist.", "a musician; toot out a tune for us!", "pilot.");
+  var aprC=new Array("a dictator...um...I'm sorry.");
+  var mayC=new Array("a politician.");
+  var junC=new Array("a CEO.", "a Nobel Prize Winner; congrats!");
+  var julC=new Array("a bricklayer.", "an artist.", "a train driver; your caboose is ready to take charge.", "a wizard; that booty really do be magical.");
+  var augC=new Array("a bricklayer.", "President of the United States; I hope you'll remember me at your inauguration!");
+  var sepC=new Array("a genius test-taker.", "a professor.", "an athlete.");
+  var octC=new Array("a politician.");
+  var novC=new Array("a serial killer; come on, you gotta stop killin the haters with your swag.");
+  var decC=new Array("a dentist.", "a messiah, either religious or secular.");
   var careers=new Array(janC, febC, marC, aprC, mayC, junC, julC, augC, sepC, octC, novC, decC);
   var randCareer=randomElem(careers[bb.getMonth()], []);
 
   //synonyms
-  var syn=new Array("buttocks", "backside", "behind", "booty", "bottom", "breech", "bum", "buns", "butt", "caboose", "cheeks", "derrière", "fanny", "haunches", "heinie", "keester", "posterior", "rear", "rear end", rump", "seat", "tail", "tail end", "tush", "caboose");
+  var syn=new Array("buttocks", "backside", "behind", "booty", "bottom", "breech", "bum", "buns", "butt", "caboose", "cheeks", "derrière", "fanny", "haunches", "heinie", "keester", "posterior", "rear", "rear end", "rump", "seat", "tail", "tail end", "tush", "caboose");
   //results output
-  results="Your butt birthday is: "+bbdayStr+"<br>This makes your "+randomElem(syn,[])+" "+age+" years old<br>Gemstone: "+gemstones[bb.getMonth()]+"<br>Your "+randomElem(syn,[])+" shares its formation day with "+randCeleb+"'s "+randomElem(syn,[])+"<br>Your "+randomElem(syn,[])+" is "+first+", "+second+", "+third+"<br>Your money-maker will likely make money as "+"<br>";
+  results="Your butt birthday is: "+bbdayStr+"<br>This makes your "+randomElem(syn,[])+" "+age+" years old.<br>Gemstone: "+gemstones[bb.getMonth()]+"<br>Your "+randomElem(syn,[])+" shares its formation day with "+randCeleb+"'s "+randomElem(syn,[])+".<br>Your "+randomElem(syn,[])+" is "+first+", "+second+", and "+third+".<br>Your money-maker will likely make money as "+randCareer;
   document.getElementById("text").innerHTML = results;
 }
 
