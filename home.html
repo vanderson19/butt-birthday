@@ -49,7 +49,7 @@ function success(){
   var b=new Date(y, m-1, d);
   var bb=new Date(y, m-1, d);
   bb.setDate(b.getDate()-224);
-  var bbdayStr=bb.getMonth()+" / "+bb.getDate()+" / "+bb.getFullYear();
+  var bbdayStr=(bb.getMonth()+1)+" / "+bb.getDate()+" / "+bb.getFullYear();
 
   //age calculation
   var today=new Date();
@@ -89,9 +89,9 @@ function success(){
   var novP=new Array("diligent", "adventurous", "strong-willed", "adventurous", "curious", "hard-working", "booty-ful");
   var decP=new Array("booty-ful", "flamboyant", "serene", "deep");
   var personality=new Array(janP, febP, marP, aprP, mayP, junP, julP, augP, sepP, octP, novP, decP);
-  var first=randomElem(personality[bb.getMonth()-1], []);
-  var second=randomElem(personality[bb.getMonth()-1], [first]);
-  var third=randomElem(personality[bb.getMonth()-1], [first, second]);
+  var first=randomElem(personality[bb.getMonth()], []);
+  var second=randomElem(personality[bb.getMonth()], [first]);
+  var third=randomElem(personality[bb.getMonth()], [first, second]);
 
   //results output
   results="Your butt birthday is: "+bbdayStr+"<br>This makes your heinie "+age+" years old.<br>Your booty shares its formation day with "+randCeleb+"'s posterior.<br>Your tush is "+first+", "+second+", "+third+"<br>Gemstone: "+gemstones[bb.getMonth()]+"<br>Your caboose will likely be a "+"<br>";
