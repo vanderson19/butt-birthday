@@ -2,15 +2,52 @@
 <html>
 <head>
 <title>Butt Birthday</title>
-<style></style>
+<style>
+body{
+image-background: https://img.pngio.com/hd-birthday-border-the-world-3-gclipart-elegant-birthday-border-elegant-birthday-border-png-1191_1069.png;
+}
+h1{
+color: #b3ffff;
+text-shadow: 2px 2px 5px #008080;
+text-align: center;
+font-size: 80 px;
+font-family: Florence, cursive;
+}
+h4{
+color: #ff99e6;
+font-size: 20 px;
+font-family: Lucida, sans-serif;
+}
+#error{
+  color: #00af3d;
+  font-size: 14 px;
+  font-family: Lucida, sans-serif;
+}
+
+p{
+  color: #6600cc;
+  font-size: 14 px;
+  font-family: Lucida, sans-serif;
+}
+
+.form{
+color: #e6c300;
+font-size: 50 px;
+font-family: Lucida, sans-serif;
+text-align: center;
+}
+
+</style>
 </head>
 
 <body>
 <h1>Butt Birthday</h1>
 <h4>Enter your birthday in the form mm/dd/yyyy:</h4>
 
+<div class="form">
 <input type="text" id="m" name="m" maxlength="2" size="2" required> / <input type="text" id="d" name="d" maxlength="2" size="2" required> /
 <input type="text" id="y" name="y" maxlength="4" size="4" required> <p id="error"></p>
+</div>
 
 <button type="button" onclick="validate()">I'm ready to be enlightened</button>
 
@@ -36,7 +73,7 @@ function validate(){
     err="That's not a valid date, silly!";
   }
   else if (y.toString().length < 4){
-    err="That's not a four-digit year, silly! (Pls add all preceding 0's if you're immortal or from the 100s or 10s)";
+    err="That's not a four-digit year, silly! (Pls add all preceding 0's if you're thousands of years old)";
   }
   else {
     success();
