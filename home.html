@@ -7,7 +7,7 @@ body{
 margin-left: 150px; 
 background-image: url("https://img.pngio.com/hd-birthday-border-the-world-3-gclipart-elegant-birthday-border-elegant-birthday-border-png-1191_1069.png");
 background-repeat: no-repeat;
-background-attachment: fixed;
+background-attachment: scroll;
 background-position: bottom left;
 background-size: contain; 
 }
@@ -15,32 +15,47 @@ h1{
 color: #b3ffff;
 text-shadow: 2px 2px 5px #008080;
 text-align: center;
-font-size: 80 px;
+font-size: 80px;
 font-family: Florence, cursive;
 }
 h4{
 color: #ff99e6;
-font-size: 20 px;
+font-size: 20px;
 font-family: Lucida, sans-serif;
 }
 #error{
   color: #00af3d;
-  font-size: 14 px;
+  font-size: 20px;
   font-family: Lucida, sans-serif;
 }
 
 p{
   color: #6600cc;
-  font-size: 14 px;
+  font-size: 18px;
   font-family: Lucida, sans-serif;
 }
 
 .form{
-color: #e6c300;
-font-size: 50 px;
+color: #ffe033;
+font-size: 50px;
 font-family: Lucida, sans-serif;
 text-align: center;
 }
+
+input[type=text] {
+height: 50px;
+padding: 12px 20px;
+margin: 8px 0;
+border:none;
+border-bottom: 4px solid #ffe033;
+box-sizing: border-box;
+background-color: #fff4b3;
+color:#e6c300;
+outline: none;
+font-size: 30px;
+font-family: Lucida, sans-serif;
+}
+
 
 </style>
 </head>
@@ -50,7 +65,7 @@ text-align: center;
 <h4>Enter your birthday in the form mm/dd/yyyy:</h4>
 
 <div class="form">
-<input type="text" id="m" name="m" maxlength="2" size="2" required> / <input type="text" id="d" name="d" maxlength="2" size="2" required> /
+<input type="text" id="m" name="m" maxlength="2" size="2" required>  /  <input type="text" id="d" name="d" maxlength="2" size="2" required>  / 
 <input type="text" id="y" name="y" maxlength="4" size="4" required> <p id="error"></p>
 </div>
 
