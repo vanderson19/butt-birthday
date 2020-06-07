@@ -6,15 +6,15 @@
       href="https://clipartstation.com/wp-content/uploads/2018/09/ass-clipart-7.jpg">
 <style>
 body{
-margin-left: 200px; 
-margin-right: 200px; 
-margin-top: 200px; 
+margin-left: 200px;
+margin-right: 200px;
+margin-top: 200px;
 margin-bottom: 130px;
 background-image: url("https://www.pngarts.com/files/6/Confetti-Border-Transparent-Background-PNG.png");
 background-repeat: no-repeat;
 background-attachment: scroll;
 background-position: top;
-background-size: cover; 
+background-size: cover;
 }
 h1{
 color: #00cfe6;
@@ -103,7 +103,7 @@ margin-right: auto;
 <h4>Enter your birthday in the form mm/dd/yyyy:</h4>
 
 <div class="form">
-<input type="text" id="m" name="m" maxlength="2" size="2" required>  /  <input type="text" id="d" name="d" maxlength="2" size="2" required>  / 
+<input type="text" id="m" name="m" maxlength="2" size="2" required>  /  <input type="text" id="d" name="d" maxlength="2" size="2" required>  /
 <input type="text" id="y" name="y" maxlength="4" size="4" required> <p id="error"></p>
 </div>
 
@@ -127,7 +127,7 @@ function validate(){
   if (isNaN(m) || isNaN(d) || isNaN(y)){
     err="Those aren't numbers, silly!";
   }
-  else if (m<1 || m>12 || d<1 || d>31){
+  else if ((m<1 || m>12 || d<1 || d>31) || ([2].includes(m) and d>29) ||(4, 6, 9, 11].includes(m) and d>30) ){
     err="That's not a valid date, silly!";
   }
   else if (y.toString().length < 4){
@@ -154,7 +154,7 @@ function success(){
   //celeb list
   var jan=new Array(["Paul Revere", "Betsy Ross"], ["Renee Elise Goldsberry", "Dax Shepard"],  ["Greta Thunberg","Mel Gibson"], ["Isaac Newton","Charles Melton"], ["Bradley Cooper","Marilyn Manson"], ["Rowan Atkinson","Eddie Redmayne"], ["Nicolas Cage","Jeremy Renner"], ["Elvis Presley","Stephen Hawking"], ["Kate Middleton","Richard Nixon"], ["Ajit Pai","Rod Stewart"], ["Mary J. Blige","Alexander Hamilton"], ["Zayn Malik","Jeff Bezos"], ["Liam Hemsworth","Natalia Dyer"], ["Dan Schneider","Jason Bateman"], ["Martin Luther King Jr.","Pitbull", "Dove Cameron"], ["Lin Manuel Miranda","Jennie Kim"], ["Jake Paul","Michelle Obama", "Jim Carrey", "Betty White", "Steve Harvey", "Calvin Harris", "Muhammad Ali"], ["Karan Brar","Eugene Lee Yang"], ["Mac Miller","Dolly Parton"], ["Rainn Wilson","Buzz Aldrin"], ["Alex from Target","Booboo Stewart"], ["Logic","Guy Fieri"], ["Hey Vsauce, Michael here","John Hancock"], ["Daveed Diggs","Neil Diamond"], ["Alicia Keys","Lil Mosey"], ["Ellen DeGeneres","Colin O'Donoghue"], ["Wolfgang Mozart","Patton Oswalt"], ["Ariel Winter","Elijah Wood"], ["Oprah Winfrey","Harriet Tubman"], ["Christian Bale","Franklin D. Roosevelt", "BENEE"], ["Justin Timberlake","Jackie Robinson"]);
   var feb=new Array(["Harry Styles", "Ronda Rousey"], ["Shakira"],  ["Sean Kingston","Daddy Yankee", "Warwick Davis", "Ferdinand Magellan"], ["Zach King","Rosa Parks", "Hannah Stocking"], ["Cristiano Ronaldo","Henry Golding"], ["Bob Marley","Babe Ruth", "Ronald Reagan", "Rick Astley"], ["Jacksepticeye","Gabbie Hanna", "Ashton Kutcher", "Bea Miller", "Chris Rock"], ["James Dean","John Williams", "Cecily Strong", "Klay Thompson"], ["Michael B. Jordan","Tom Hiddleston"], ["CalebCity","Emma Roberts"], ["Jennifer Aniston","Taylor Lautner", "Khalid", "Thomas Edison", "Alex Jones"], ["Abraham Lincoln","Gucci Mane"], ["Sophia Lillis","Jerry Springer"], ["Tati Westbrook","Ferderick Douglass", "Simon Pegg", "Michael Bloomberg"], ["Megan Thee Stallion","Galileo Galilei", "Susan B. Anthony"], ["Weeknd","Ava Max", "Elizabeth Olsen", "Ice T"], ["Michael Jordan","Ed Sheeran", "Paris Hilton", "Bonnie Wright", "Joseph Gordon-Levitt"], ["JHope","John Travolta", "Dr. Dre"], ["Millie Bobby Brown","Victoria Justice"], ["Rihanna","Kurt Cobain", "ExplodingTNT", "Cindy Crawford", "Trevor Noah"], ["Sophie Turner","Alan Rickman", "Corbin Bleu", "Jordan Peele"], ["George Washington","Steve Irwin", "Lea Salonga"], ["Dakota Fanning","Emily Blunt", "Josh Gad"], ["Steve Jobs","Floyd Mayweather"], ["George Harrison","Jameela Jamil"], ["Johnny Cash","Michael Bolton"], ["James Perry","John Steinbeck"], ["Rudy Mancuso"], ["Ja Rule"]);
-  var mar=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
+  var mar=new Array(["Justin Bieber", "Kesha", "Lupita Nyong'o"], ["Becky G", "Dr. Seuss", "Rebel Wilson", "Jon Bon Jovi", "James Arthur"],  ["Camila Cabello","Phil 'That's a lot of damage' Swift"], ["Brett Yang","Julie Bowen", "Alexander Graham Bell"], ["Peter Hollens","Antonio Vivaldi"], ["Madison Beer","Eva Mendes"], ["Tyler The Creator","Shaquille O'Neal"], ["Wanda Sykes","Woah Vicky"], ["Lester Holt","Keemstar"], ["Oscar Isaac","Min Yoongi"], ["Bad Bunny","Carrie Underwood", "Chuck Norris", "Emily Osment", "Robin Thicke"], ["Mark Rober"], ["Christina Grimmie","Stromae"], ["Tristan Thompson","Leigh-Allyn Baker"], ["Stephen Curry","Albert Einstein", "Simon Biles", "Ansel Elgort"], ["Lil Dicky","will.i.am", "Eva Longoria", "Andrew Jackson"], ["Alexandra Daddario","James Madison"], ["Rob Kardashian","John Boyega", "Grimes", "Hozier"], ["Adam Levine","Queen Latifah", "Vanessa Williams"], ["Fred Rogers","Lois Lowry"], ["Gary Oldman","Rosie O'Donnell"], ["Tyler Oakley","Reese Witherspoon"], ["Vanessa Morgan","JP Saxe"], ["Peyton Manning","Jim Parsons", "Harry Houdini", "Tommy Hilfinger"], ["Casey Neistat", "Elton John", "Aretha Franklin", "Sarah Jessica Parker"], ["Danielle Bregoli","Keira Knightley", "Jonathan Groff", "Steven Tyler", "Nancy Pelosi"], ["Mariah Carey","Jessie J", "Fergie", "Brenda Song"] ["Alex Wassabi","Lady Gaga"], ["Mark Thomas"], ["Celine Dion","Vincent van Gogh", "MC Hammer"], ["Liza Koshy","Ewan McGregor", "Cesar Chavez", "Johann Sebastian Bach", "Christopher Walken"]);
   var apr=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
   var may=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
   var jun=new Array(["", ""], ["", ""],  ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""], ["",""]);
